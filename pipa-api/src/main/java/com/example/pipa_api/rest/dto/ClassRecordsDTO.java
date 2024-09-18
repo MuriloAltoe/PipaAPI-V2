@@ -1,16 +1,15 @@
 package com.example.pipa_api.rest.dto;
 
+import java.time.LocalDate;
+
 import com.example.pipa_api.domain.entity.ClassRecords;
 import com.example.pipa_api.domain.entity.Employee;
 import com.example.pipa_api.domain.entity.GoogleDriveMedia;
 import com.example.pipa_api.domain.entity.Students;
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
