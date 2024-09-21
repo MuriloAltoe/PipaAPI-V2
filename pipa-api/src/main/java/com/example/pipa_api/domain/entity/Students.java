@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -74,7 +75,7 @@ public class Students {
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "image_id")
     private Image image;
 

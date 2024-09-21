@@ -3,9 +3,6 @@ package com.example.pipa_api.rest.dto;
 import java.time.LocalDate;
 
 import com.example.pipa_api.domain.entity.ClassRecords;
-import com.example.pipa_api.domain.entity.Employee;
-import com.example.pipa_api.domain.entity.GoogleDriveMedia;
-import com.example.pipa_api.domain.entity.Students;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,11 +27,11 @@ public class ClassRecordsDTO {
 
     private String subject;
 
-    private GoogleDriveMedia media;
+    private Long media;
 
-    private Employee employee;
+    private Long employee;
 
-    private Students student;
+    private Long student;
 
     public static ClassRecordsDTO toDTO(ClassRecords classRecords){
         ClassRecordsDTO dto = new ClassRecordsDTO();
@@ -46,9 +43,9 @@ public class ClassRecordsDTO {
         dto.setLocation(classRecords.getLocation());
         dto.setStatus(classRecords.getStatus());
         dto.setSubject(classRecords.getSubject());
-        dto.setMedia(classRecords.getMedia());
-        dto.setEmployee(classRecords.getEmployee());
-        dto.setStudent(classRecords.getStudent());
+        dto.setMedia(classRecords.getMedia().getId());
+        dto.setEmployee(classRecords.getEmployee().getId());
+        dto.setStudent(classRecords.getStudent().getId());
 
         return dto;
     }
@@ -63,11 +60,7 @@ public class ClassRecordsDTO {
         classRecords.setLocation(dto.getLocation());
         classRecords.setStatus(dto.getStatus());
         classRecords.setSubject(dto.getSubject());
-        classRecords.setMedia(dto.getMedia());
-        classRecords.setEmployee(dto.getEmployee());
-        classRecords.setStudent(dto.getStudent());
 
         return classRecords;
     }
-
 }
